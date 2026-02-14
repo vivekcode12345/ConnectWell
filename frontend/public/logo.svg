@@ -1,0 +1,25 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer circle - represents wholeness and support -->
+  <circle cx="50" cy="50" r="45" stroke="#667eea" stroke-width="3" fill="url(#gradient)" />
+  
+  <!-- Connected nodes - represents connection and community -->
+  <circle cx="35" cy="40" r="8" fill="#84fab0" />
+  <circle cx="65" cy="40" r="8" fill="#84fab0" />
+  <circle cx="50" cy="60" r="8" fill="#667eea" />
+  
+  <!-- Connection lines -->
+  <line x1="35" y1="40" x2="50" y2="60" stroke="#667eea" stroke-width="3" stroke-linecap="round" />
+  <line x1="65" y1="40" x2="50" y2="60" stroke="#667eea" stroke-width="3" stroke-linecap="round" />
+  <line x1="35" y1="40" x2="65" y2="40" stroke="#667eea" stroke-width="3" stroke-linecap="round" />
+  
+  <!-- Heart shape in center node -->
+  <path d="M50 58 L47 55 Q45 53 45 51 Q45 48 47 47 Q49 46 50 48 Q51 46 53 47 Q55 48 55 51 Q55 53 53 55 Z" fill="white" />
+  
+  <!-- Gradient definition -->
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#84fab0" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#667eea" stop-opacity="0.1" />
+    </linearGradient>
+  </defs>
+</svg>
