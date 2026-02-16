@@ -10,6 +10,11 @@ An emotional intelligence platform that helps users track moods, analyze communi
 
 An emotional intelligence platform that helps users track moods, analyze communication tone with AI, and build supportive communities.
 
+## 🚀 Live Demo
+
+- **Frontend:** https://connect-well-three.vercel.app
+- **Backend API:** https://connectwell-backend.onrender.com
+
 ## Table of Contents
 1. [Features](#features)
 2. [Tech Stack](#tech-stack)
