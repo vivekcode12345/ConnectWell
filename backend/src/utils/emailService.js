@@ -4,6 +4,42 @@ const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 /**
+ * Send OTP email for verification
+ */
+const sendOtpEmail = async (email, userName = "", otp) => {
+  const msg = {
+    to: email,
+    from: process.env.EMAIL_FROM || "noreply@connectwell.com",
+    subject: "Your ConnectWell verification code",
+    html: `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <div style="background: #0d1b1e; color: white; padding: 24px; text-align: center; border-radius: 8px 8px 0 0;">
+          <h1 style="margin: 0; font-size: 24px;">Verify your email</h1>
+          <p style="margin: 8px 0 0 0; font-size: 14px; opacity: 0.9;">ConnectWell account verification</p>
+        </div>
+        <div style="background: #f9f9f9; padding: 24px; border-radius: 0 0 8px 8px;">
+          <p style="margin: 0 0 12px 0; color: #333; font-size: 16px;">Hi ${userName || "there"},</p>
+          <p style="margin: 0 0 16px 0; color: #666; font-size: 14px;">Use the code below to verify your email. It expires in 10 minutes.</p>
+          <div style="font-size: 28px; letter-spacing: 6px; font-weight: bold; text-align: center; padding: 16px; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 8px;">
+            ${otp}
+          </div>
+          <p style="margin: 16px 0 0 0; color: #999; font-size: 12px; text-align: center;">If you did not request this, you can ignore this email.</p>
+        </div>
+      </div>
+    `,
+  };
+
+  try {
+    await sgMail.send(msg);
+    console.log(`[Email Service] OTP email sent to ${email}`);
+    return { success: true, message: "OTP email sent" };
+  } catch (error) {
+    console.warn(`[Email Service] OTP email failed for ${email}`, error.message);
+    return { success: false, message: "Failed to send OTP email" };
+  }
+};
+
+/**
  * Send welcome email after successful verification
  */
 const sendWelcomeEmail = async (email, userName = '') => {
@@ -61,5 +97,6 @@ const sendWelcomeEmail = async (email, userName = '') => {
 };
 
 module.exports = {
+  sendOtpEmail,
   sendWelcomeEmail,
 };

@@ -50,14 +50,14 @@ const ToneAnalyzer = () => {
 
   return (
     <div className="mx-auto max-w-5xl space-y-6">
-      <section className="group rounded-[32px] border-2 border-ink/10 bg-white p-8 shadow-lg transition-all duration-300 hover:border-mint/50 hover:shadow-xl">
+      <section className="group rounded-[32px] border-2 border-ink/10 dark:border-slate-700 bg-white dark:bg-slate-800 p-8 shadow-lg transition-all duration-300 hover:border-mint/50 hover:shadow-xl">
         <div className="flex items-center gap-3">
           <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-mint to-purple text-2xl shadow-md transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
             🤖
           </div>
           <div>
-            <h2 className="font-display text-3xl">AI tone analyzer</h2>
-            <p className="mt-1 text-sm text-ink/70">
+            <h2 className="font-display text-3xl dark:text-slate-50">AI tone analyzer</h2>
+            <p className="mt-1 text-sm text-ink/70 dark:text-slate-400">
               Check emotional tone and rewrite your message in different styles.
             </p>
           </div>
@@ -67,12 +67,12 @@ const ToneAnalyzer = () => {
             rows="6"
             value={text}
             onChange={(event) => setText(event.target.value)}
-            className="w-full rounded-2xl border-2 border-ink/10 px-4 py-3 transition-all duration-300 focus:border-mint focus:shadow-md focus:outline-none"
+            className="w-full rounded-2xl border-2 border-ink/10 dark:border-slate-600 dark:bg-slate-700 dark:text-slate-50 px-4 py-3 transition-all duration-300 focus:border-mint focus:shadow-md focus:outline-none dark:focus:border-mint"
             placeholder="Paste a message you want to analyze..."
             required
           ></textarea>
-          {error && <p className="text-sm text-coral">{error}</p>}
-          <button disabled={loading} className="rounded-full bg-ink px-6 py-3 text-sm font-semibold text-sand shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg disabled:opacity-50 disabled:hover:scale-100">
+          {error && <p className="text-sm text-coral dark:text-red-400">{error}</p>}
+          <button disabled={loading} className="rounded-full bg-ink dark:bg-mint dark:text-ink px-6 py-3 text-sm font-semibold text-sand shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg disabled:opacity-50 disabled:hover:scale-100">
             {loading ? "Analyzing..." : "Analyze tone"}
           </button>
         </form>
@@ -80,32 +80,32 @@ const ToneAnalyzer = () => {
 
       {result && (
         <>
-          <section className="rounded-3xl border-2 border-ink/10 bg-gradient-to-br from-sand/40 to-mint/10 p-6 shadow-lg">
+          <section className="rounded-3xl border-2 border-ink/10 dark:border-slate-700 bg-gradient-to-br from-sand/40 dark:from-slate-800 to-mint/10 dark:to-slate-700 p-6 shadow-lg">
             <div className="flex items-center gap-2 mb-3">
               <span className="text-xl">📝</span>
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-ink/50">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-ink/50 dark:text-slate-400">
                 Analyzed message
               </p>
             </div>
-            <p className="text-sm text-ink/80 italic leading-relaxed">"{analyzedText}"</p>
+            <p className="text-sm text-ink/80 dark:text-slate-300 italic leading-relaxed">"{analyzedText}"</p>
           </section>
 
           <section className="grid gap-4 md:grid-cols-2">
-            <div className="group cursor-pointer rounded-3xl border-2 border-ink/10 bg-white p-6 shadow-lg transition-all duration-300 hover:scale-105 hover:border-mint hover:shadow-xl">
+            <div className="group cursor-pointer rounded-3xl border-2 border-ink/10 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 shadow-lg transition-all duration-300 hover:scale-105 hover:border-mint hover:shadow-xl">
               <div className="flex items-center gap-2">
                 <span className="text-2xl transition-transform duration-300 group-hover:scale-125">🎯</span>
-                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-ink/50">
+                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-ink/50 dark:text-slate-400">
                   Detected tone
                 </p>
               </div>
-              <p className="mt-3 text-3xl font-bold capitalize transition-colors duration-300 group-hover:text-mint">
+              <p className="mt-3 text-3xl font-bold capitalize dark:text-slate-50 transition-colors duration-300 group-hover:text-mint">
                 {result.tone}
               </p>
             </div>
-            <div className="group cursor-pointer rounded-3xl border-2 border-ink bg-gradient-to-br from-ink via-ink to-purple p-6 text-sand shadow-lg transition-all duration-300 hover:scale-105 hover:border-mint hover:shadow-2xl">
+            <div className="group cursor-pointer rounded-3xl border-2 border-ink dark:border-slate-700 bg-gradient-to-br from-ink via-ink to-purple dark:from-slate-800 dark:via-slate-800 dark:to-slate-700 p-6 text-sand dark:text-slate-50 shadow-lg transition-all duration-300 hover:scale-105 hover:border-mint hover:shadow-2xl">
               <div className="flex items-center gap-2">
                 <span className="text-2xl transition-transform duration-300 group-hover:scale-125">✨</span>
-                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sand/60">
+                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sand/60 dark:text-slate-400">
                   Original suggestion
                 </p>
               </div>
@@ -115,21 +115,21 @@ const ToneAnalyzer = () => {
             </div>
           </section>
 
-          <section className="rounded-[32px] border-2 border-ink/10 bg-white p-8 shadow-lg">
-            <h3 className="font-display text-2xl mb-4">Rewrite in different styles</h3>
+          <section className="rounded-[32px] border-2 border-ink/10 dark:border-slate-700 bg-white dark:bg-slate-800 p-8 shadow-lg">
+            <h3 className="font-display text-2xl dark:text-slate-50 mb-4">Rewrite in different styles</h3>
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {rewriteStyles.map((style) => (
                 <button
                   key={style.key}
                   onClick={() => handleRewrite(style.key)}
                   disabled={rewriteLoading[style.key]}
-                  className="group relative rounded-2xl border-2 border-ink/10 bg-gradient-to-br from-white to-sand/30 p-4 text-left shadow-md transition-all duration-300 hover:scale-105 hover:border-mint hover:shadow-xl disabled:opacity-50 disabled:hover:scale-100"
+                  className="group relative rounded-2xl border-2 border-ink/10 dark:border-slate-700 bg-gradient-to-br from-white dark:from-slate-700 to-sand/30 dark:to-slate-600 p-4 text-left shadow-md transition-all duration-300 hover:scale-105 hover:border-mint hover:shadow-xl disabled:opacity-50 disabled:hover:scale-100"
                 >
                   <div className="flex items-center gap-2 mb-2">
                     <span className="text-2xl transition-transform duration-300 group-hover:scale-125">{style.icon}</span>
-                    <span className="font-semibold text-ink">{style.label}</span>
+                    <span className="font-semibold text-ink dark:text-slate-200">{style.label}</span>
                   </div>
-                  <p className="text-xs text-ink/60">{style.desc}</p>
+                  <p className="text-xs text-ink/60 dark:text-slate-400">{style.desc}</p>
                   {rewriteLoading[style.key] && (
                     <span className="absolute right-3 top-3 text-xs text-mint">Loading...</span>
                   )}
@@ -139,16 +139,16 @@ const ToneAnalyzer = () => {
 
             {Object.keys(rewrites).length > 0 && (
               <div className="mt-6 space-y-4">
-                <h4 className="text-sm font-semibold uppercase tracking-[0.3em] text-ink/50">Results</h4>
+                <h4 className="text-sm font-semibold uppercase tracking-[0.3em] text-ink/50 dark:text-slate-400">Results</h4>
                 {Object.entries(rewrites).map(([style, text]) => (
-                  <div key={style} className="group rounded-2xl border-2 border-ink/10 bg-gradient-to-br from-sand/30 to-mint/10 p-4 shadow-md transition-all duration-300 hover:border-mint hover:shadow-lg">
+                  <div key={style} className="group rounded-2xl border-2 border-ink/10 dark:border-slate-700 bg-gradient-to-br from-sand/30 dark:from-slate-700 to-mint/10 dark:to-slate-600 p-4 shadow-md transition-all duration-300 hover:border-mint hover:shadow-lg">
                     <div className="flex items-center gap-2 mb-2">
                       <span className="text-lg">{rewriteStyles.find((s) => s.key === style)?.icon}</span>
-                      <span className="text-xs font-semibold uppercase tracking-[0.3em] text-ink/70">
+                      <span className="text-xs font-semibold uppercase tracking-[0.3em] text-ink/70 dark:text-slate-300">
                         {rewriteStyles.find((s) => s.key === style)?.label}
                       </span>
                     </div>
-                    <p className="text-sm text-ink/90 leading-relaxed">{text}</p>
+                    <p className="text-sm text-ink/90 dark:text-slate-300 leading-relaxed">{text}</p>
                   </div>
                 ))}
               </div>

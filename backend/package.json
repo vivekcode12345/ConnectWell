@@ -22,7 +22,6 @@
     "mongoose": "^8.6.0",
     "morgan": "^1.10.0",
     "nodemailer": "^8.0.1",
-    "openai": "^4.72.0",
     "otplib": "^13.3.0"
   },
   "devDependencies": {

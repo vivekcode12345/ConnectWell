@@ -26,7 +26,7 @@ const MoodChart = ({ entries }) => {
     const config = moodConfig[mood] || { emoji: '🔵', color: '#84fab0', gradient: 'from-gray-400 to-gray-500' };
 
     return (
-      <div className="group relative flex cursor-pointer flex-col items-center rounded-2xl p-4 transition-all duration-300 hover:scale-105 hover:bg-sand/50">
+      <div className="group relative flex cursor-pointer flex-col items-center rounded-2xl p-4 transition-all duration-300 hover:scale-105 hover:bg-sand/50 dark:hover:bg-slate-700">
         <div className="relative h-32 w-32">
           {/* Background circle */}
           <svg className="h-32 w-32 -rotate-90 transform transition-all duration-300 group-hover:scale-110">
@@ -37,6 +37,7 @@ const MoodChart = ({ entries }) => {
               stroke="#f5f3ed"
               strokeWidth="8"
               fill="none"
+              className="dark:stroke-slate-700"
             />
             {/* Animated progress circle */}
             <circle
@@ -56,24 +57,24 @@ const MoodChart = ({ entries }) => {
           {/* Center content */}
           <div className="absolute inset-0 flex flex-col items-center justify-center transition-all duration-300 group-hover:scale-110">
             <span className="text-4xl transition-transform duration-300 group-hover:scale-125">{config.emoji}</span>
-            <span className="mt-1 text-xl font-bold text-ink">{count}</span>
+            <span className="mt-1 text-xl font-bold text-ink dark:text-slate-50">{count}</span>
           </div>
         </div>
         {/* Label */}
         <div className="mt-2 text-center">
-          <p className="text-sm font-semibold capitalize text-ink transition-colors duration-300 group-hover:text-ink">{mood}</p>
-          <p className="text-xs text-ink/60 transition-colors duration-300 group-hover:text-ink/80">{percentage.toFixed(0)}%</p>
+          <p className="text-sm font-semibold capitalize text-ink dark:text-slate-200 transition-colors duration-300 group-hover:text-ink dark:group-hover:text-slate-50">{mood}</p>
+          <p className="text-xs text-ink/60 dark:text-slate-400 transition-colors duration-300 group-hover:text-ink/80 dark:group-hover:text-slate-300">{percentage.toFixed(0)}%</p>
         </div>
       </div>
     );
   };
 
   return (
-    <div className="group rounded-3xl border-2 border-ink/10 bg-white p-8 shadow-lg transition-all duration-300 hover:border-mint/50 hover:shadow-xl">
+    <div className="group rounded-3xl border-2 border-ink/10 dark:border-slate-700 bg-white dark:bg-slate-800 p-8 shadow-lg transition-all duration-300 hover:border-mint/50 hover:shadow-xl">
       <div className="flex items-center justify-between">
         <div>
-          <h3 className="font-display text-2xl">Mood Analytics</h3>
-          <p className="mt-1 text-sm text-ink/60">
+          <h3 className="font-display text-2xl dark:text-slate-50">Mood Analytics</h3>
+          <p className="mt-1 text-sm text-ink/60 dark:text-slate-400">
             {total} total check-ins tracked
           </p>
         </div>
@@ -83,10 +84,10 @@ const MoodChart = ({ entries }) => {
       </div>
 
       {moods.length === 0 ? (
-        <div className="mt-8 flex flex-col items-center justify-center rounded-2xl border-2 border-dashed border-ink/10 py-12">
+        <div className="mt-8 flex flex-col items-center justify-center rounded-2xl border-2 border-dashed border-ink/10 dark:border-slate-700 py-12">
           <span className="text-5xl opacity-30">📈</span>
-          <p className="mt-4 text-sm text-ink/60">No mood entries yet.</p>
-          <p className="mt-1 text-xs text-ink/40">Start tracking to see beautiful analytics!</p>
+          <p className="mt-4 text-sm text-ink/60 dark:text-slate-400">No mood entries yet.</p>
+          <p className="mt-1 text-xs text-ink/40 dark:text-slate-500">Start tracking to see beautiful analytics!</p>
         </div>
       ) : (
         <div className="mt-8 grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">

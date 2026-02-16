@@ -132,14 +132,14 @@ const MoodCheckIn = () => {
 
   return (
     <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[1fr_1fr]">
-      <section className="group rounded-[32px] border-2 border-ink/10 bg-white p-8 shadow-lg transition-all duration-300 hover:border-mint/50 hover:shadow-xl">
+      <section className="group rounded-[32px] border-2 border-ink/10 dark:border-slate-700 bg-white dark:bg-slate-800 p-8 shadow-lg transition-all duration-300 hover:border-mint/50 hover:shadow-xl">
         <div className="flex items-center gap-3">
           <div className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${moodColors[selectedMood].gradient} text-3xl shadow-md transition-all duration-300 group-hover:scale-110 group-hover:rotate-6`}>
             {moodEmojis[selectedMood]}
           </div>
           <div>
-            <h2 className="font-display text-3xl">Daily check-in</h2>
-            <p className="mt-1 text-sm text-ink/70">
+            <h2 className="font-display text-3xl dark:text-slate-50">Daily check-in</h2>
+            <p className="mt-1 text-sm text-ink/70 dark:text-slate-400">
               Name your mood and add context so you can spot trends later.
             </p>
           </div>
@@ -166,13 +166,13 @@ const MoodCheckIn = () => {
             })}
           </div>
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <p className="text-sm text-ink/70">
+            <p className="text-sm text-ink/70 dark:text-slate-400">
               Example note for {selectedMood}
             </p>
             <button
               type="button"
               onClick={handleUseSample}
-              className="rounded-full border-2 border-ink/10 px-4 py-1.5 text-xs font-semibold transition-all duration-300 hover:scale-105 hover:border-mint hover:bg-mint/10"
+              className="rounded-full border-2 border-ink/10 dark:border-slate-600 dark:text-slate-200 px-4 py-1.5 text-xs font-semibold transition-all duration-300 hover:scale-105 hover:border-mint hover:bg-mint/10"
             >
               Use sample
             </button>
@@ -182,38 +182,38 @@ const MoodCheckIn = () => {
             value={note}
             onChange={(event) => setNote(event.target.value)}
             placeholder="Add a short note about your mood..."
-            className="w-full rounded-2xl border-2 border-ink/10 px-4 py-3 transition-all duration-300 focus:border-mint focus:shadow-md focus:outline-none"
+            className="w-full rounded-2xl border-2 border-ink/10 dark:border-slate-600 dark:bg-slate-700 dark:text-slate-50 px-4 py-3 transition-all duration-300 focus:border-mint focus:shadow-md focus:outline-none dark:focus:border-mint"
           ></textarea>
-          <p className="text-xs text-ink/50">
+          <p className="text-xs text-ink/50 dark:text-slate-500">
             Sample: {moodExamples[selectedMood]}
           </p>
-          {error && <p className="text-sm text-coral">{error}</p>}
-          <button disabled={loading} className="rounded-full bg-ink px-6 py-3 text-sm font-semibold text-sand shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg disabled:opacity-50 disabled:hover:scale-100">
+          {error && <p className="text-sm text-coral dark:text-red-400">{error}</p>}
+          <button disabled={loading} className="rounded-full bg-ink dark:bg-mint dark:text-ink px-6 py-3 text-sm font-semibold text-sand shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg disabled:opacity-50 disabled:hover:scale-100">
             {loading ? "Saving..." : "Save check-in"}
           </button>
         </form>
         {tip && (
-          <div className="mt-6 rounded-2xl border-2 border-mint/30 bg-gradient-to-br from-mint/10 to-sand p-4 text-sm shadow-md transition-all duration-300 hover:shadow-lg">
+          <div className="mt-6 rounded-2xl border-2 border-mint/30 dark:border-mint/20 bg-gradient-to-br from-mint/10 dark:from-mint/20 to-sand dark:to-slate-700 p-4 text-sm shadow-md transition-all duration-300 hover:shadow-lg">
             <div className="flex items-center gap-2">
               <span className="text-xl">💡</span>
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-ink/50">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-ink/50 dark:text-slate-400">
                 Wellness tip
               </p>
             </div>
-            <p className="mt-2">{tip}</p>
+            <p className="mt-2 dark:text-slate-300">{tip}</p>
           </div>
         )}
       </section>
-      <section className="group rounded-[32px] border-2 border-ink/10 bg-white p-8 shadow-lg transition-all duration-300 hover:border-purple/50 hover:shadow-xl">
+      <section className="group rounded-[32px] border-2 border-ink/10 dark:border-slate-700 bg-white dark:bg-slate-800 p-8 shadow-lg transition-all duration-300 hover:border-purple/50 hover:shadow-xl">
         <div className="flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-mint to-purple text-xl shadow-md transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
             📊
           </div>
-          <h3 className="font-display text-xl">Recent entries</h3>
+          <h3 className="font-display text-xl dark:text-slate-50">Recent entries</h3>
         </div>
         <div className="mt-4 space-y-3">
           {history.length === 0 ? (
-            <p className="text-sm text-ink/60">No check-ins yet.</p>
+            <p className="text-sm text-ink/60 dark:text-slate-400">No check-ins yet.</p>
           ) : (
             history.slice(0, 6).map((entry) => {
               const entryColors = moodColors[entry.mood] || moodColors.calm;

@@ -1,0 +1,78 @@
+{
+  "name": "ConnectWell - Emotional Intelligence Platform",
+  "short_name": "ConnectWell",
+  "description": "Be Seen. Be Heard. Be Well. Track your emotions, improve communication, and find supportive communities.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#0d1b1e",
+  "background_color": "#f7f2e7",
+  "screenshots": [
+    {
+      "src": "/logo.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/logo.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "form_factor": "wide"
+    }
+  ],
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["health", "lifestyle"],
+  "shortcuts": [
+    {
+      "name": "Mood Check-in",
+      "short_name": "Mood",
+      "description": "Log your daily mood",
+      "url": "/mood?mode=add",
+      "icons": [
+        {
+          "src": "/logo.svg",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Tone Analyzer",
+      "short_name": "Analyzer",
+      "description": "Analyze and improve your tone",
+      "url": "/tone-analyzer",
+      "icons": [
+        {
+          "src": "/logo.svg",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Communities",
+      "short_name": "Community",
+      "description": "Find support in communities",
+      "url": "/communities",
+      "icons": [
+        {
+          "src": "/logo.svg",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}

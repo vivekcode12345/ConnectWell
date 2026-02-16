@@ -44,18 +44,18 @@ const Dashboard = () => {
 
   return (
     <div className="mx-auto max-w-6xl space-y-6">
-      <section className="relative overflow-hidden rounded-[36px] bg-gradient-to-br from-ink via-ink to-purple p-8 text-sand shadow-2xl">
+      <section className="relative overflow-hidden rounded-[36px] bg-gradient-to-br from-ink via-ink to-purple dark:from-slate-800 dark:via-slate-800 dark:to-slate-700 p-8 text-sand dark:text-slate-50 shadow-2xl">
         <div className="relative z-10">
           <div className="flex items-center gap-2">
             <div className="h-2 w-2 animate-pulse rounded-full bg-mint shadow-lg shadow-mint/50"></div>
-            <p className="text-sm uppercase tracking-[0.3em] text-sand/60">
+            <p className="text-sm uppercase tracking-[0.3em] text-sand/60 dark:text-slate-400">
               Well-being dashboard
             </p>
           </div>
           <h2 className="mt-3 font-display text-4xl">
             Welcome back, {user?.name || "friend"}.
           </h2>
-          <p className="mt-3 text-base text-sand/80">
+          <p className="mt-3 text-base text-sand/80 dark:text-slate-300">
             Here is your emotional snapshot and a few grounding insights.
           </p>
         </div>
@@ -66,25 +66,25 @@ const Dashboard = () => {
 
       <div className="grid gap-6 lg:grid-cols-[1.5fr_1fr]">
         <MoodChart entries={moods} />
-        <div className="group rounded-3xl border-2 border-ink/10 bg-gradient-to-br from-white to-sand/30 p-6 shadow-lg transition-all duration-300 hover:border-purple/50 hover:shadow-xl">
+        <div className="group rounded-3xl border-2 border-ink/10 dark:border-slate-700 bg-gradient-to-br from-white to-sand/30 dark:from-slate-800 dark:to-slate-700 p-6 shadow-lg transition-all duration-300 hover:border-purple/50 hover:shadow-xl">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-mint to-purple text-xl shadow-md transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
               📈
             </div>
-            <h3 className="font-display text-xl">Weekly Insights</h3>
+            <h3 className="font-display text-xl dark:text-slate-50">Weekly Insights</h3>
           </div>
           {trend ? (
             <div className="mt-6 space-y-4">
               {/* Stat Cards */}
               <div className="grid grid-cols-2 gap-3">
-                <div className="cursor-pointer rounded-2xl border-2 border-mint/20 bg-white p-4 shadow-sm transition-all duration-300 hover:scale-[1.02] hover:border-mint hover:shadow-md">
-                  <p className="text-xs uppercase tracking-wider text-ink/50">Check-ins</p>
-                  <p className="mt-2 text-3xl font-bold text-ink">{trend.totalEntries}</p>
+                <div className="cursor-pointer rounded-2xl border-2 border-mint/20 dark:border-slate-600 bg-white dark:bg-slate-700 p-4 shadow-sm transition-all duration-300 hover:scale-[1.02] hover:border-mint hover:shadow-md">
+                  <p className="text-xs uppercase tracking-wider text-ink/50 dark:text-slate-400">Check-ins</p>
+                  <p className="mt-2 text-3xl font-bold text-ink dark:text-slate-50">{trend.totalEntries}</p>
                   <p className="mt-1 text-xs text-mint">This week</p>
                 </div>
-                <div className="cursor-pointer rounded-2xl border-2 border-purple/20 bg-white p-4 shadow-sm transition-all duration-300 hover:scale-[1.02] hover:border-purple hover:shadow-md">
-                  <p className="text-xs uppercase tracking-wider text-ink/50">Top Mood</p>
-                  <p className="mt-2 text-2xl font-bold capitalize text-ink">
+                <div className="cursor-pointer rounded-2xl border-2 border-purple/20 dark:border-slate-600 bg-white dark:bg-slate-700 p-4 shadow-sm transition-all duration-300 hover:scale-[1.02] hover:border-purple hover:shadow-md">
+                  <p className="text-xs uppercase tracking-wider text-ink/50 dark:text-slate-400">Top Mood</p>
+                  <p className="mt-2 text-2xl font-bold capitalize text-ink dark:text-slate-50">
                     {trend.topMood || "N/A"}
                   </p>
                   <p className="mt-1 text-xs text-purple">Most frequent</p>
@@ -92,15 +92,15 @@ const Dashboard = () => {
               </div>
 
               {/* Recommendation Card */}
-              <div className="group/rec relative cursor-pointer overflow-hidden rounded-2xl bg-gradient-to-br from-mint/20 to-purple/20 p-5 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:from-mint/30 hover:to-purple/30 hover:shadow-md">
+              <div className="group/rec relative cursor-pointer overflow-hidden rounded-2xl bg-gradient-to-br from-mint/20 to-purple/20 dark:from-mint/30 dark:to-slate-700 p-5 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:from-mint/30 hover:to-purple/30 hover:shadow-md">
                 <div className="relative z-10">
                   <div className="flex items-center gap-2">
                     <span className="text-lg transition-transform duration-300 group-hover/rec:scale-125">✨</span>
-                    <p className="text-xs font-semibold uppercase tracking-wider text-ink/60">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-ink/60 dark:text-slate-300">
                       Smart Recommendation
                     </p>
                   </div>
-                  <p className="mt-3 text-sm leading-relaxed text-ink">
+                  <p className="mt-3 text-sm leading-relaxed text-ink dark:text-slate-200">
                     Try a 10-minute reset walk to keep the momentum.
                   </p>
                 </div>
@@ -108,27 +108,27 @@ const Dashboard = () => {
               </div>
 
               {/* Engagement indicator */}
-              <div className="flex cursor-pointer items-center justify-between rounded-xl bg-white p-4 transition-all duration-300 hover:bg-sand/50 hover:shadow-md">
+              <div className="flex cursor-pointer items-center justify-between rounded-xl bg-white dark:bg-slate-700 p-4 transition-all duration-300 hover:bg-sand/50 dark:hover:bg-slate-600 hover:shadow-md">
                 <div className="flex items-center gap-3">
                   <div className="h-3 w-3 animate-pulse rounded-full bg-green-500 shadow-lg shadow-green-500/50"></div>
-                  <span className="text-sm font-medium text-ink/70">Active tracking</span>
+                  <span className="text-sm font-medium text-ink/70 dark:text-slate-300">Active tracking</span>
                 </div>
-                <span className="text-xs text-ink/50">🔥 {trend.totalEntries} day streak</span>
+                <span className="text-xs text-ink/50 dark:text-slate-400">🔥 {trend.totalEntries} day streak</span>
               </div>
             </div>
           ) : (
-            <div className="mt-6 flex flex-col items-center justify-center rounded-2xl border-2 border-dashed border-ink/10 py-12">
+            <div className="mt-6 flex flex-col items-center justify-center rounded-2xl border-2 border-dashed border-ink/10 dark:border-slate-700 py-12">
               <div className="h-8 w-8 animate-spin rounded-full border-4 border-mint border-t-transparent"></div>
-              <p className="mt-4 text-sm text-ink/60">Loading insights...</p>
+              <p className="mt-4 text-sm text-ink/60 dark:text-slate-400">Loading insights...</p>
             </div>
           )}
         </div>
       </div>
 
       <div className="grid gap-6 lg:grid-cols-2">
-        <div className="group relative overflow-hidden rounded-3xl border-2 border-ink/10 bg-white p-6 shadow-lg transition-all duration-300 hover:border-ink/30 hover:shadow-xl">
+        <div className="group relative overflow-hidden rounded-3xl border-2 border-ink/10 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 shadow-lg transition-all duration-300 hover:border-ink/30 hover:shadow-xl">
           <div className="flex items-center justify-between">
-            <h3 className="font-display text-xl">Stress Pattern</h3>
+            <h3 className="font-display text-xl dark:text-slate-50">Stress Pattern</h3>
             <span className={`rounded-full px-4 py-1.5 text-xs font-bold shadow-md ${
               stressLevel === 'High' 
                 ? 'bg-gradient-to-r from-red-500 to-orange-500 text-white' 
@@ -139,12 +139,12 @@ const Dashboard = () => {
               {stressLevel}
             </span>
           </div>
-          <p className="mt-2 text-xs text-ink/60">Last 7 days analysis</p>
+          <p className="mt-2 text-xs text-ink/60 dark:text-slate-400">Last 7 days analysis</p>
           
           {/* Animated Wave Progress */}
           <div className="mt-6 space-y-2">
             <div className="flex items-end justify-between text-xs font-semibold">
-              <span className="text-ink/70">Stress Level</span>
+              <span className="text-ink/70 dark:text-slate-400">Stress Level</span>
               <span className={`text-xl ${
                 stressLevel === 'High' ? 'text-red-500' : 
                 stressLevel === 'Moderate' ? 'text-orange-500' : 'text-green-500'
@@ -152,7 +152,7 @@ const Dashboard = () => {
             </div>
             
             {/* Modern gradient progress bar */}
-            <div className="relative h-6 overflow-hidden rounded-full bg-sand">
+            <div className="relative h-6 overflow-hidden rounded-full bg-sand dark:bg-slate-700">
               <div
                 className={`h-full rounded-full shadow-lg transition-all duration-1000 ease-out ${
                   stressLevel === 'High' 
@@ -170,12 +170,12 @@ const Dashboard = () => {
 
           {/* Stats Grid */}
           <div className="mt-6 grid grid-cols-2 gap-4">
-            <div className="cursor-pointer rounded-2xl bg-sand p-4 transition-all duration-300 hover:bg-mint/30 hover:shadow-md">
-              <p className="text-xs uppercase tracking-wider text-ink/50">Check-ins</p>
-              <p className="mt-1 text-2xl font-bold text-ink">{recentMoods.length}</p>
+            <div className="cursor-pointer rounded-2xl bg-sand dark:bg-slate-700 p-4 transition-all duration-300 hover:bg-mint/30 dark:hover:bg-slate-600 hover:shadow-md">
+              <p className="text-xs uppercase tracking-wider text-ink/50 dark:text-slate-400">Check-ins</p>
+              <p className="mt-1 text-2xl font-bold text-ink dark:text-slate-50">{recentMoods.length}</p>
             </div>
-            <div className="cursor-pointer rounded-2xl bg-sand p-4 transition-all duration-300 hover:bg-coral/20 hover:shadow-md">
-              <p className="text-xs uppercase tracking-wider text-ink/50">Stress Events</p>
+            <div className="cursor-pointer rounded-2xl bg-sand dark:bg-slate-700 p-4 transition-all duration-300 hover:bg-coral/20 dark:hover:bg-slate-600 hover:shadow-md">
+              <p className="text-xs uppercase tracking-wider text-ink/50 dark:text-slate-400">Stress Events</p>
               <p className="mt-1 text-2xl font-bold text-coral">{stressCount}</p>
             </div>
           </div>
@@ -184,7 +184,7 @@ const Dashboard = () => {
           <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-gradient-to-br from-purple/10 to-mint/10 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"></div>
         </div>
 
-        <div className="group relative overflow-hidden rounded-3xl border-2 border-ink bg-gradient-to-br from-ink via-ink to-purple p-6 text-sand shadow-lg transition-all duration-300 hover:border-mint hover:shadow-2xl">
+        <div className="group relative overflow-hidden rounded-3xl border-2 border-ink dark:border-slate-700 bg-gradient-to-br from-ink via-ink to-purple dark:from-slate-800 dark:via-slate-800 dark:to-slate-700 p-6 text-sand dark:text-slate-50 shadow-lg transition-all duration-300 hover:border-mint hover:shadow-2xl">
           <div className="relative z-10">
             <div className="flex items-center gap-3">
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sand/10 text-2xl backdrop-blur-sm transition-all duration-300 group-hover:bg-sand/20 group-hover:scale-110">
@@ -192,7 +192,7 @@ const Dashboard = () => {
               </div>
               <h3 className="font-display text-xl">Personalized Focus</h3>
             </div>
-            <p className="mt-4 text-base leading-relaxed text-sand/90">{recommendation}</p>
+            <p className="mt-4 text-base leading-relaxed text-sand/90 dark:text-slate-300">{recommendation}</p>
           </div>
           
           {/* Animated background pattern */}

@@ -19,8 +19,7 @@ npm run dev
 - `JWT_SECRET`
 - `JWT_EXPIRES_IN`
 - `CLIENT_ORIGIN`
-- `OPENAI_API_KEY`
-- `OPENAI_MODEL`
+- `GROQ_API_KEY`
 
 ## Scripts
 - `npm run dev` - Start with nodemon

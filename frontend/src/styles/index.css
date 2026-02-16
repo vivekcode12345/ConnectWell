@@ -13,12 +13,46 @@
   --sky: #a9d9ff;
 }
 
+html.dark {
+  color-scheme: dark;
+}
+
 body {
   font-family: "Space Grotesk", sans-serif;
   background: radial-gradient(circle at 10% 10%, #ffffff, #f7f2e7 48%, #e6f7f2 100%);
   min-height: 100vh;
+  transition: background-color 0.3s ease;
+}
+
+html.dark body {
+  background: radial-gradient(circle at 10% 10%, #1a1a2e, #0f3460 48%, #16213e 100%);
 }
 
 .gradient-card {
   background: linear-gradient(135deg, #ffffff 0%, #f6f2e8 50%, #e8faf4 100%);
+  transition: background 0.3s ease;
+}
+
+html.dark .gradient-card {
+  background: linear-gradient(135deg, #1f2937 0%, #111827 50%, #0f3460 100%);
+}
+
+/* Smooth transitions for theme changes */
+* {
+  @apply transition-colors duration-300;
+}
+
+/* Input and form styling for dark mode */
+@layer components {
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  textarea,
+  select {
+    @apply dark:bg-slate-800 dark:text-slate-50 dark:border-slate-600;
+  }
+
+  button {
+    @apply dark:transition-colors dark:duration-300;
+  }
 }
