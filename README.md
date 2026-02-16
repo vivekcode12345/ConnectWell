@@ -19,14 +19,8 @@ cd frontend && npm install && npm run dev
 Add your OpenAI API key for real AI analysis:
 1. Get a free API key from [OpenAI](https://platform.openai.com/api-keys)
 2. Add to `backend/.env`: `OPENAI_API_KEY=sk-...`
-3. See [OPENAI_SETUP.md](OPENAI_SETUP.md) for detailed instructions
 
 Without the key, the app uses a simple mock analyzer.
-
-### Demo Accounts
-After running `npm run seed` in the backend:
-- Email: `ava@example.com` / Password: `ConnectWell123`
-- Email: `kai@example.com` / Password: `ConnectWell123`
 
 ## Project Structure
 ```
@@ -53,8 +47,7 @@ connectwell/
 │   ├── package.json
 │   └── README.md
 ├── README.md                   # This file
-├── DEPLOYMENT.md              # Render + Vercel guide
-└── PRODUCTION_CHECKLIST.md    # Launch checklist
+└── DEPLOYMENT.md              # Render + Vercel guide
 ```
 
 ## Features
@@ -80,11 +73,6 @@ npm install
 cp .env.example .env
 ```
 Update `.env` with your MongoDB connection string and JWT secret.
-
-Optional demo data:
-```bash
-npm run seed
-```
 
 Start the API:
 ```bash
@@ -289,16 +277,14 @@ The backend applies security headers via Helmet and basic rate limiting for abus
 ## Next Steps
 
 1. **Local Testing**: Run `npm run dev` in both backend and frontend, then test the features
-2. **OpenAI Setup**: Get API key from [OpenAI](https://platform.openai.com/api-keys) and add to `.env` (see [OPENAI_SETUP.md](OPENAI_SETUP.md))
-3. **Demo Data**: Run `npm run seed` in backend to populate sample data
-4. **Customization**: Update branding, colors, and copy in `tailwind.config.js` and component text
-5. **Database**: Set up MongoDB Atlas for production data
-6. **Deployment**: Follow [DEPLOYMENT.md](DEPLOYMENT.md) to deploy to Render + Vercel
-7. **Monitoring**: Set up error tracking and logging for production
+2. **OpenAI Setup**: Get API key from [OpenAI](https://platform.openai.com/api-keys) and add to `.env`
+3. **Customization**: Update branding, colors, and copy in `tailwind.config.js` and component text
+4. **Database**: Set up MongoDB Atlas for production data
+5. **Deployment**: Follow [DEPLOYMENT.md](DEPLOYMENT.md) to deploy to Render + Vercel
+6. **Monitoring**: Set up error tracking and logging for production
 
 ## Support
 
 For issues or questions:
 1. Check the relevant README in `backend/` or `frontend/` folders
 2. Review [DEPLOYMENT.md](DEPLOYMENT.md) for deployment issues
-3. Check [PRODUCTION_CHECKLIST.md](PRODUCTION_CHECKLIST.md) before launching

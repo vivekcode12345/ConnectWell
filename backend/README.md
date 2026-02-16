@@ -25,5 +25,4 @@ npm run dev
 ## Scripts
 - `npm run dev` - Start with nodemon
 - `npm start` - Start production server
-- `npm run seed` - Seed demo data (clears existing data)
 - `npm test` - Run integration tests (requires MongoDB running)
