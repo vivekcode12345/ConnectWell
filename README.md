@@ -45,7 +45,6 @@ An emotional intelligence platform that helps users track moods, analyze communi
 ### Prerequisites
 - Node.js 16+ and npm
 - MongoDB (local or Atlas)
-- SendGrid API key
 - Groq API key
 
 ### Installation
